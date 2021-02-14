@@ -45,6 +45,14 @@ html, body {
   text-decoration: none;
 }
 
+.sidebar form {
+  margin: 30px;
+}
+
+.sidebar form input {
+  width: 180px;
+}
+
 .sidebar > nav {
   margin: 40px 0;
 }
@@ -95,4 +103,15 @@ html, body {
   font-size: 12px;
   margin-top: 20px;
   text-decoration: none;
+}
+
+
+.profile, .login {
+  float: right;
+  margin: 25px 30px 0 0;
+}
+
+.profile a, login a {
+  color: #444;
+  
 }

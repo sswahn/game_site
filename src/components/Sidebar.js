@@ -15,6 +15,10 @@ export default function Sidebar() {
           </a>
         </h1>
       </header>
+      <form className="search">
+        <input type="search" value="Search" />
+        {/* <button></button> */}
+      </form>
       <nav>
         <div>
           <p>Games by genre:</p>

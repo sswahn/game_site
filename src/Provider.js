@@ -1,15 +1,16 @@
 import { createContext } from 'react'
 
-export default function Provider(props) {
-  const Context = createContext()
-  const state = {
-    display: 'default'
-  }
-  
+const data = {
+  display: 'default',
+  authenticated: true
+}
+
+export const Context = createContext()
+
+export default function Provider({ children }) {
   return (
-    <Context.Provider value={state}>
-      {props.children}
+    <Context.Provider value={data}>
+      {children}
     </Context.Provider>
   )
 }
-

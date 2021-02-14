@@ -1,26 +1,36 @@
+import { useContext } from 'react'
+import { Context } from '../Provider'
+import { config } from '../config'
 
 export default function UserNav() {
+  const context = useContext(Context)
 
   const profile = () => {
     return (
-      <div>
-        <a href={}>User Profile</a>
+      <div className="profile">
+        <a href={config.url.profile}>User Profile</a>
       </div>
     )
   }
 
-  const loginForm = () => {
+  const login = () => {
     return (
-      <form>
-        <input type="search" />
-        <button type="submit"></button>
-      </form>
+      <div className="login">
+        <a href="">Login</a>
+      </div>
     )
+  }
+
+  const render = () => {
+    if (context.authenticated) {
+      return profile()
+    } 
+    return login()
   }
 
   return (
     <div className="usernav">
-      {context.loggedin ? profile() : loginForm()}
+      {render()}
     </div>
   )
 }
