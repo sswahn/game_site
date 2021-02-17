@@ -1,25 +1,28 @@
 
-
 export default function Store() {
 
   const create = data => {
+    localStorage.setItem('store', JSON.stringify(data))
+  }
+
+  const add = data => {
     const store = JSON.parse(localStorage.getItem('store'))
-    console.log('store:', store)
-    localStorage.setItem('store', JSON.stringify({
-      ...store, 
-      ...data
-    }))
+    const item = { ...store, ...data }
+    localStorage.setItem('store', JSON.stringify(item))
   }
 
-  const remove = (data = undefined) => {
-    if (data !== undefined) {
-      const store = JSON.parse(localStorage.getItem('store'))
-      delete store[data]
-      localStorage.setItem('store', JSON.stringify(store))
-    } else {
-      localStorage.clear()
+  const removeItem = item => {
+    if (item !== String) {
+      return console.error('Param must be a string.')
     }
+    const store = JSON.parse(localStorage.getItem('store'))
+    delete store[item]
+    localStorage.setItem('store', JSON.stringify(store))
   }
 
-  return { create, remove }
+  const remove = () => {
+      localStorage.clear()
+  }
+
+  return { create, add, remove }
 }
