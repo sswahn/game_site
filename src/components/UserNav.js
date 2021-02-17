@@ -5,22 +5,13 @@ import { config } from '../config'
 export default function UserNav() {
   const context = useContext(Context)
 
-  const profile = () => 
+  const render = () => 
     <div className="profile">
-      <a href={config.url.profile}>User Profile</a>
+      {context.authenticated 
+        ? <a href={config.url.profile}>User Profile</a>
+        : <a href={config.url.login}>Login</a>
+      }
     </div>
-
-  const login = () => 
-    <div className="login">
-      <a href="#">Login</a>
-    </div>
- 
-  const render = () => {
-    if (context.authenticated) {
-      return profile()
-    } 
-    return login()
-  }
 
   return (
     <div className="usernav">

@@ -3,6 +3,7 @@ export const config = {
     home: '/',
     about: '/about',
     contact: '/contact',
+    login: '/login',
     profile: '/profile',
     cart: '/cart',
     facebook: '',
