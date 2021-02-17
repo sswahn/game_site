@@ -2,6 +2,8 @@
 export default function Product() {
 
   return (
-    <div className="product">Product</div>
+    <div className="container">
+      <div>Product page</div>
+    </div>
   )
 }

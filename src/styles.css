@@ -117,14 +117,14 @@ html, body {
   color: #444; 
 }
 
-.games-container {
+.container {
   clear: both;
   height: 100%;
   max-width: 100%;
   margin: 0  50px 0 300px;
 }
 
-.games-container .games {
+.container .games {
   background: #ccc;
   display: block;
   height: 500px;

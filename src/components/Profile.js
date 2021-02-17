@@ -1,10 +1,9 @@
 
-
-export default function Cart() {
+export default function Profile() {
 
   return (
     <div className="container">
-      <div>Cart</div>
+      <div>Profile</div>
     </div>
   )
 }
