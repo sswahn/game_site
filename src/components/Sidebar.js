@@ -4,7 +4,9 @@ import { config } from '../config'
 
 export default function Sidebar() {
   const initial_state = { display: 'default' }
-  const [ state, dispatch ] = useReducer(reducer, initial_state)
+  const [ dispatch ] = useReducer(reducer, initial_state)
+
+  console.log('sidebar:', 'testing?')
 
   return (
     <div className="sidebar">
@@ -16,7 +18,7 @@ export default function Sidebar() {
         </h1>
       </header>
       <form className="search">
-        <input type="search" value="Search" />
+        <input type="search" />
         {/* <button></button> */}
       </form>
       <nav>
