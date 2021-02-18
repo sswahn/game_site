@@ -15,8 +15,12 @@ export default function Landing() {
   return (
     <div className="container">
       <a href={fake_data.game1.url} className="games">
-        <span>some game</span>
+        <figure>
+          <img src={fake_data.game1.title_art} alt={fake_data.game1.title} />
+          <figcaption>The Great Gaias</figcaption>
+        </figure>
       </a>
+      
       <a href={fake_data.game2.url} className="games">
         <span>another game</span>
       </a>

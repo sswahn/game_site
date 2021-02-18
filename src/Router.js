@@ -11,7 +11,7 @@ export default function Router() {
     <BrowserRouter>
       <Switch>
         <Route exact path={config.url.home}>
-          <Landing />
+          
         </Route>
         <Route exact path={config.url.profile}>
           <Profile />

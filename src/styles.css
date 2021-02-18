@@ -7,6 +7,7 @@
   box-sizing: border-box;
   font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
   margin: 0;
+  outline: none;
   padding: 0;
 }
 
@@ -15,119 +16,120 @@ html, body {
   width: 100%;
 }
 
-.sidebar {
-  background: #333;
-  height: 100%;
-  position: fixed;
-  width: 250px;
-}
-
-.sidebar:hover {
-  overflow-y: scroll;
-}
-
-.sidebar::-webkit-scrollbar {
-  width: 8px;
-}
-.sidebar::-webkit-scrollbar-track {
-  background: #333;        /* color of the tracking area */
-}
-
-.sidebar::-webkit-scrollbar-thumb {
-  background-color: #666;    /* color of the scroll thumb */
-  border-radius: 20px;       /* roundness of the scroll thumb */
-}
-
-.sidebar header {
-  padding: 10px 30px;
-}
-
-.sidebar header h1 a {
-  color: white;
-  font-size: 19px;
+abbr {
   text-decoration: none;
 }
 
-.sidebar form {
-  margin: 30px;
+.header {
+  width: 100%;
+  border-bottom: 1px solid #ccc;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 0 50px;
 }
 
-.sidebar form input {
-  width: 180px;
-}
 
-.sidebar > nav {
-  margin: 40px 0;
-}
-
-.sidebar > nav div {
-  border-top: 1px solid #444;
-  padding: 20px 0;
-}
-
-.sidebar > nav p {
-  color: #999;
-  font-size: 16px;
-  padding: 7px 30px;
+/* logo */
+.header h1 a  img{
+  font-size: 18px;
+  margin-top: 25px;
   text-transform: uppercase;
 }
 
-.sidebar > nav a {
-  color: #ccc;
+
+/* nav */
+.header nav {
+  width: 155px;
+}
+
+
+/* dropdown menu */
+.dropdown {
+  width: 155px;
+}
+
+.header nav .dropdown-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 18px;
+  font-weight: bold;
+  padding: 25px 10px;
+}
+
+.dropdown-content {
+  background: #444;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2); /* consider removing */
+  color: white;
+  display: none;
+  left: 0;
+  position: absolute;
+  width: 100%;
+  z-index: 1;
+}
+
+.dropdown-header {
+  background: #222;
+  padding: 50px 0;
+  width: 100%;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+
+/* search box */
+.header form {
+  position: relative;
+  width: 1000px;
+}
+
+.header form input {
+  background: #eee;
+  border: 1px solid #ccc;
+  border-radius: 25px;
+  font-size: 16px;
+  line-height: 20px;
+  margin: 15px 0 0 0;
+  width: 100%;
+  padding: 10px 20px;
+}
+
+.header form input:focus {
+  background: white;
+  border: 1px solid gray;
+}
+
+.header form button {
+  background: #444;
+  border: 0;
+  border-left: 2px solid #ccc;
+  border-radius: 0 25px 25px 0;
+  color: white;
+  cursor: pointer;
   display: block;
   font-size: 14px;
-  text-transform: uppercase;
-  padding: 7px 30px;
-  text-decoration: none;
+  height: 42px;
+  margin: 15px 0 0 0;
+  padding: 10px 40px;
+  position: absolute;
+  right: 0;
+  top: 0;
 }
 
-.sidebar > nav a:hover {
-  background: #444;
+
+/* login & register */
+.header > div {
+  width: 255px;
 }
 
-.sidebar footer {
-  border-top: 1px solid #444;
-  margin: 150px  0 0 0; /* fix this */
-  padding: 15px 30px;
-}
-
-.sidebar footer nav a {
-  color: #999;
-  font-size: 12px;
-  text-decoration: none;
-}
-
-.sidebar footer nav a:hover {
-  color: #ccc;
-}
-
-.sidebar footer p {
-  color: #666;
-  font-size: 12px;
-  margin-top: 20px;
-  text-decoration: none;
-}
-
-.profile, .login {
-  float: right;
-  margin: 25px 30px 25px 0;
-}
-
-.profile a, login a {
-  color: #444; 
-}
-
-.container {
-  clear: both;
-  height: 100%;
-  max-width: 100%;
-  margin: 0  50px 0 300px;
-}
-
-.container .games {
-  background: #ccc;
-  display: block;
-  height: 500px;
-  max-width: 100%;
-  margin-bottom: 50px;
+.header > div button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 18px;
+  font-weight: bold;
+  padding: 25px 10px;
 }
