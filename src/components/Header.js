@@ -8,51 +8,58 @@ export default function Header() {
           <img src="" alt="logo" />
         </a>
       </h1>
-      <nav>
-        <div className="dropdown">
-          <button className="dropdown-btn">
-            <span>Browse Games</span>
-            <i className="fas fa-caret-down"></i>
-          </button>
-          <div className="dropdown-content">
-            <div className="dropdown-header">
-              <div>Genre</div>
-              <div>Category</div>
-            </div>
-            <div className="dropdown-row">
-              <div className="dropdown-col">Action</div>
-              <div className="dropdown-col">Adventure</div>
-              <div className="dropdown-col"><abbr title="Role Playing Games">RPG</abbr></div>
-              <div className="dropdown-col">Strategy</div>
-              <div className="dropdown-col">Horror</div>
-              <div className="dropdown-col">Survival</div>
-              <div className="dropdown-col">Platformer</div>
-              <div className="dropdown-col">Sports</div>
-              <div className="dropdown-col">Racing</div>
-              <div className="dropdown-col">Casual</div>
-            </div>
-            <div className="dropdown-row">
-              <div className="dropdown-col">Featured</div>
-              <div className="dropdown-col">New Releases</div>
-              <div className="dropdown-col">Top Sellers</div>
-              <div className="dropdown-col">Recommended</div>
-              <div className="dropdown-col">Mobile</div>
+      <div>
+        <nav>
+          <div className="dropdown">
+            <button className="dropdown-btn">
+              <i className="fas fa-gamepad"></i>
+              <span>Games</span>
+              <i className="fas fa-caret-down"></i>
+            </button>
+            <div className="dropdown-content">
+              <div className="dropdown-header">
+                <div>
+                  <span>Category</span>
+                  <span>Genre</span>
+                </div>
+              </div>
+              <div className="dropdown-row">
+                <div className="dropdown-col">
+                  <button>Featured</button>
+                  <button>New Releases</button>
+                  <button>On Sale</button>
+                  <button>Recommended</button>
+                  <button>Top Sellers</button>
+                </div>
+                <div className="dropdown-col">
+                  <button>Action</button>
+                  <button>Adventure</button>
+                  <button>Horror</button>
+                  <button>Platformer</button>
+                  <button><abbr title="Role Playing Games">RPG</abbr></button>
+                  <button>Shooters</button>
+                  <button>Sports & Racing</button>
+                  <button>Strategy</button>
+                  <button>Survival</button>
+                </div>
+              </div>
             </div>
           </div>
+        </nav>
+        <form>
+          <input type="search" placeholder="Search for games or developers" />
+          <button type="submit">
+            <i className="fa fa-search"></i>
+            <span>Search</span>
+          </button>
+        </form>
+        <div className="login">
+          <button>
+            <i className="fa fa-user-o"></i>
+            <span>Login</span>
+          </button>
+          {/* <button>Cart</button> */}
         </div>
-      </nav>
-      <form>
-        <input type="search" placeholder="Search for games or developers" />
-        <button type="submit">
-          <span>Search</span>
-          <i className=""></i>
-        </button>
-      </form>
-      <div>
-        <button>
-          <span>Login</span>
-          <i className="fa fa-user-o"></i>
-        </button>
       </div>
     </header>
   )

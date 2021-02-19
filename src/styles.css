@@ -101,21 +101,45 @@ abbr {
   text-transform: uppercase;
 }
 
+.dropdown-header div {
+  margin: 0 auto;
+  max-width: 1250px;
+}
+
+.dropdown-header div span {
+  margin: 0 100px 0 10px;
+}
+
 .dropdown:hover .dropdown-content {
   display: block;
 }
 
 .dropdown-row {
-  margin: 25px 0;
+  display: flex;
+  flex-direction: row;
+  margin: 0 auto;
+  width: 1250px;
 }
 
-.dropdown-link {
+.dropdown-col {
+  margin: 25px 50px 25px 0;
+  width: 150px;
+}
+
+.dropdown-col button {
   background: none;
   border: none;
   color: white;
   display: block;
   cursor: pointer;
-  font-size: 14px;
+  font-size: 16px;
+  padding: 10px;
+  text-align: left;
+  width: 100%;
+}
+
+.dropdown-col button:hover {
+  background: #666;
 }
 
 /* end dropdown menu */
@@ -182,3 +206,76 @@ abbr {
 /* end login */
 /* end header content container */
 /* end header */
+
+
+
+
+
+.landing {
+  width: 1250px;
+  height: 500px;
+  margin: 50px auto;
+}
+
+
+.games {
+  display: block;
+  padding: 10px;
+  text-decoration: none;
+  width: 300px;
+}
+
+.games img {
+  border: 1px solid #444;
+  width: 280px;
+}
+
+.games .heading {
+  color: #444;
+  display: flex;
+  justify-content: space-between;
+}
+
+.games .heading h2 {
+  font-size: 18px;
+  text-transform: uppercase;
+}
+
+.games .heading span {
+  font-weight: bold;
+}
+
+
+
+.games p {
+  color: #444;
+}
+
+.games .meta {
+  color: #666;
+  display: flex;
+  justify-content: space-between;
+  margin: 5px 0 0 0;
+}
+
+.games .meta div {
+  font-size: 14px;
+  font-weight: bold;
+}
+
+
+.games .genre {
+  display: flex;
+  margin: 5px 0 0 0;
+}
+
+.games .genre a {
+  color: orange;
+  font-size: 14px;
+  margin-right: 10px;
+  text-decoration: none;
+}
+
+.games .genre a:hover {
+  color: #ff6c00;
+}
