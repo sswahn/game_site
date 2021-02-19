@@ -1,6 +1,6 @@
 import { BrowserRouter, Switch, Route } from 'react-router-dom'
 import { config } from './config'
-import Landing from './components/Landing'
+//import Landing from './components/Landing'
 import Profile from './components/Profile'
 import Cart from './components/Cart'
 import Product from './components/Product'

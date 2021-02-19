@@ -1,3 +1,4 @@
+/* globals */
 :root {
   --blue: #1e90ff;
   --white: #ffffff;
@@ -19,35 +20,53 @@ html, body {
 abbr {
   text-decoration: none;
 }
+/* end globals */
 
+/* header */
 .header {
   width: 100%;
   border-bottom: 1px solid #ccc;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
   padding: 0 50px;
+  position: relative;
 }
 
-
 /* logo */
-.header h1 a  img{
+.header h1 {
+  color: black;
+  position: absolute;
+  left: 0;
+  margin: 0 0 0 50px;
+  top: 0;
+}
+
+.header h1 a {
+  color: black;
+  text-decoration: none;
+}
+
+.header h1 a img {
   font-size: 18px;
   margin-top: 25px;
   text-transform: uppercase;
 }
+/* end logo */
 
-
-/* nav */
-.header nav {
-  width: 155px;
+/* header content container */
+.header > div {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin: 0 auto;
+  width: 1250px;
 }
 
+/* nav  (games button container)*/
+.header nav {
+  width: 75px;
+}
 
 /* dropdown menu */
-.dropdown {
-  width: 155px;
-}
+.dropdown {}
 
 .header nav .dropdown-btn {
   background: none;
@@ -56,6 +75,11 @@ abbr {
   font-size: 18px;
   font-weight: bold;
   padding: 25px 10px;
+}
+
+.header nav .dropdown-btn:hover {
+  border-bottom: 4px solid orange;
+  padding-bottom: 21px;
 }
 
 .dropdown-content {
@@ -71,14 +95,31 @@ abbr {
 
 .dropdown-header {
   background: #222;
-  padding: 50px 0;
+  font-weight: bold;
+  padding: 25px 0;
   width: 100%;
+  text-transform: uppercase;
 }
 
 .dropdown:hover .dropdown-content {
   display: block;
 }
 
+.dropdown-row {
+  margin: 25px 0;
+}
+
+.dropdown-link {
+  background: none;
+  border: none;
+  color: white;
+  display: block;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+/* end dropdown menu */
+/* end nav */
 
 /* search box */
 .header form {
@@ -118,14 +159,14 @@ abbr {
   right: 0;
   top: 0;
 }
+/* end search box */
 
-
-/* login & register */
-.header > div {
-  width: 255px;
+/* login */
+.header .login {
+  width: 75px;
 }
 
-.header > div button {
+.header .login button {
   background: none;
   border: none;
   cursor: pointer;
@@ -133,3 +174,11 @@ abbr {
   font-weight: bold;
   padding: 25px 10px;
 }
+
+.header .login button:hover {
+  border-bottom: 4px solid orange;
+  padding-bottom: 21px;
+}
+/* end login */
+/* end header content container */
+/* end header */
