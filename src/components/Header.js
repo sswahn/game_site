@@ -65,11 +65,13 @@ export default function Header() {
           </button>
         </form>
         <div className="login">
-          <button>
-            <FontAwesomeIcon icon={faUserCircle} title="User Login" />
+          <button className="tooltip">
+            <FontAwesomeIcon icon={faUserCircle} />
+            <span className="tooltiptext">User Login</span>
           </button>
-          <button>
-            <FontAwesomeIcon icon={faShoppingCart} title="View Cart" />
+          <button className="tooltip">
+            <FontAwesomeIcon icon={faShoppingCart} />
+            <span className="tooltiptext">Cart</span>
           </button>
         </div>
       </div>
