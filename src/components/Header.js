@@ -1,11 +1,23 @@
 import { config } from '../config'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+// import { faBars } from '@fortawesome/free-solid-svg-icons'
+import { faSearch } from '@fortawesome/free-solid-svg-icons'
+import { faUserCircle } from '@fortawesome/free-solid-svg-icons'
+import { faShoppingCart } from '@fortawesome/free-solid-svg-icons'
 
 export default function Header() {
+
+  const search = event => {
+    event.preventDefault()
+    alert('works')
+  }
+
   return (
     <header className="header">
       <h1>
         <a href={config.url.home} rel="home">
           <img src="" alt="logo" />
+          {/* <FontAwesomeIcon icon={faBars} /> */}
         </a>
       </h1>
       <div>
@@ -48,17 +60,17 @@ export default function Header() {
         </nav>
         <form>
           <input type="search" placeholder="Search for games or developers" />
-          <button type="submit">
-            <i className="fa fa-search"></i>
-            <span>Search</span>
+          <button type="submit" onClick={search}>
+            <FontAwesomeIcon icon={faSearch} />
           </button>
         </form>
         <div className="login">
           <button>
-            <i className="fa fa-user-o"></i>
-            <span>Login</span>
+            <FontAwesomeIcon icon={faUserCircle} title="User Login" />
           </button>
-          {/* <button>Cart</button> */}
+          <button>
+            <FontAwesomeIcon icon={faShoppingCart} title="View Cart" />
+          </button>
         </div>
       </div>
     </header>

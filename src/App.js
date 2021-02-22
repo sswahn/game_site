@@ -10,8 +10,8 @@ import Router from './Router'
  * Profile page:
  * design profile page, including bio etc. and feed.
  * 
- * Icons:
- * get font awesome working.
+ * Search button:
+ * move search button out of input, etc.
  * 
  * Cart:
  * add cart icon/button to header and create cart page
