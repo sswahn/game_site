@@ -265,8 +265,106 @@ abbr {
 /* end header */
 
 
+.modal {
+  background: rgba(0, 0, 0, 0.6);
+  /* display: none; */
+  height: 100%;
+  position: absolute;
+  width: 100%;
+  z-index: 9;
+}
 
+.modal > div {
+  background: white;
+  border-radius: 5px;
+  left: 50%;
+  padding: 20px 40px 60px 40px;
+  position: absolute;
+  top: 30%;
+  transform: translateX(-40%);
+}
 
+.close-btn {
+  background: none;
+  border: 0;
+  color: var(--dark-gray);
+  cursor: pointer;
+  float: right;
+  font-size: 30px;
+}
+
+.close-btn:hover {
+  color: var(--light-gray);
+}
+
+.login-form {
+  clear: both;
+  position: relative;
+  width: 400px;
+}
+
+.login-form h2 {
+  color: teal;
+  margin: 0 0 20px 0;
+  text-align: center;
+}
+
+.login-form .fa-envelope {
+  color: teal;
+  font-size: 22px;
+  left: 10px;
+  position: absolute;
+  top: 60px;
+}
+
+.login-form .fa-lock {
+  color: teal;
+  font-size: 22px;
+  left: 10px;
+  position: absolute;
+  top: 130px;
+}
+
+.login-form input {
+  font-size: 16px;
+  padding: 0 0 0 40px;
+}
+
+.login-form input,
+.login-form button {
+  height: 50px;
+  margin-bottom: 20px;
+  width: 400px;
+}
+
+.login-form input[type=checkbox] {
+  height: initial;
+  width: initial;
+}
+
+.login-form button {
+  background: teal;
+  border: 0;
+  border-radius: 2px;
+  color: white;
+  cursor: pointer;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.login-form > div {
+  display: flex;
+  justify-content: space-between;
+}
+
+.login-form > div a {
+  color: teal;
+  text-decoration: none;
+}
+
+.login-form > div a:hover {
+  text-decoration: underline;
+}
 
 
 @media screen and (max-width: 480px) {

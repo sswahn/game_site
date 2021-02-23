@@ -1,4 +1,5 @@
 import Provider from './Provider'
+import Modal from './components/Modal'
 import Header from './components/Header'
 import Router from './Router'
 
@@ -20,6 +21,7 @@ import Router from './Router'
 export default function App() {
   return (
     <Provider>
+      <Modal />
       <Header />
       <Router />
     </Provider>
