@@ -1,11 +1,10 @@
 import { createContext } from 'react'
 
-const data = {
-  display: 'default',
-  authenticated: true
-}
-
 export const Context = createContext()
+
+const data = {
+  modal: undefined
+}
 
 export default function Provider({ children }) {
   return (

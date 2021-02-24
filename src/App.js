@@ -5,17 +5,18 @@ import Router from './Router'
 
 /**
  * TODO: 
- * Login:
- * create login/registration modal.
+ * 
+ * Fix spacing between caret and search input
+ * 
+ * Fix Login/Registration form
+ * 
+ * Create forgot password form
  * 
  * Profile page:
  * design profile page, including bio etc. and feed.
  * 
- * Search button:
- * move search button out of input, etc.
- * 
- * Cart:
- * add cart icon/button to header and create cart page
+ * Cart page:
+ * create cart page
  */
 
 export default function App() {

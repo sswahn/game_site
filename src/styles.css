@@ -2,7 +2,7 @@
 :root {
   --dark-gray: #222;
   --light-gray: #444;
-  --magenta: magenta;
+  --main-color: teal;
 }
 
 * {
@@ -58,39 +58,50 @@ abbr {
 /* end logo */
 
 /* header content container */
-.header > div {
+.header nav {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   margin: 0 auto;
-  max-width: 1250px;
+  max-width: 1370px;
 }
 
-/* nav  (games button container) */
-.header nav {
-  width: 75px;
+/* games button container */
+.header nav .dropdown-container {
+  width: 103px;
+}
+
+.fa-bars {
+  display: none;
 }
 
 /* dropdown menu */
 .dropdown {}
 
-.header nav .dropdown-btn {
+.dropdown-btn {
   background: none;
   border: none;
   color: var(--dark-gray);
   cursor: pointer;
+  display: flex;
+  flex-basis: auto;
   font-size: 18px;
   font-weight: bold;
   padding: 25px 10px;
 }
 
+.header nav .dropdown-btn svg {
+  margin-left: 10px;
+}
+
 .header nav .dropdown-btn:hover {
-  border-bottom: 4px solid var(--magenta); /* orange; */
+  border-bottom: 4px solid var(--main-color);
   padding-bottom: 21px;
 }
 
 .dropdown-content {
   background: var(--light-gray);
+  border-bottom: 8px solid var(--main-color);
   box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2); /* consider removing */
   color: white;
   display: none;
@@ -149,8 +160,17 @@ abbr {
   background: #666;
 }
 
+.vertical-rule {
+  border-right: 2px solid #777;
+  height: 300px;
+  margin-top: 50px;
+}
+.filters {
+  margin-left: 50px;
+}
 /* end dropdown menu */
 /* end nav */
+
 
 /* search box */
 .header form {
@@ -174,13 +194,14 @@ abbr {
 
 .header form input:focus {
   background: white;
-  border: 1px solid gray;
+  border: 1px solid var(--main-color);
   border-right: 0;
 }
 
 .header form input:focus + button {
   background: white;
-  border: 1px solid gray;
+  border: 1px solid var(--main-color);
+  color: var(--main-color);
   border-left: 0;
 }
 
@@ -210,7 +231,7 @@ abbr {
 }
 
 .header .login button {
-  color: var(--light-gray);
+  color: var(--dark-gray);
   background: none;
   border: 0;
   cursor: pointer;
@@ -220,20 +241,19 @@ abbr {
 }
 
 .header .login button:hover {
-  color: var(--dark-gray);
+  color: var(--main-color);
 }
 
 
 .tooltip {
   position: relative;
   display: inline-block;
-  border-bottom: 1px dotted black;
 }
 
 .tooltip .tooltiptext {
   visibility: hidden;
   width: 120px;
-  background-color: #222;
+  background-color: var(--main-color);
   color: #fff;
   font-size: 12px;
   text-align: center;
@@ -254,7 +274,7 @@ abbr {
   margin-left: -5px;
   border-width: 5px;
   border-style: solid;
-  border-color: transparent transparent black transparent;
+  border-color: transparent transparent var(--main-color) transparent;
 }
 
 .tooltip:hover .tooltiptext {
@@ -265,9 +285,36 @@ abbr {
 /* end header */
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 .modal {
   background: rgba(0, 0, 0, 0.6);
-  /* display: none; */
+  display: none;
   height: 100%;
   position: absolute;
   width: 100%;
@@ -290,7 +337,7 @@ abbr {
   color: var(--dark-gray);
   cursor: pointer;
   float: right;
-  font-size: 30px;
+  font-size: 25px;
 }
 
 .close-btn:hover {
@@ -304,13 +351,13 @@ abbr {
 }
 
 .login-form h2 {
-  color: teal;
+  color: var(--main-color);
   margin: 0 0 20px 0;
   text-align: center;
 }
 
 .login-form .fa-envelope {
-  color: teal;
+  color: var(--main-color);
   font-size: 22px;
   left: 10px;
   position: absolute;
@@ -318,7 +365,7 @@ abbr {
 }
 
 .login-form .fa-lock {
-  color: teal;
+  color: var(--main-color);
   font-size: 22px;
   left: 10px;
   position: absolute;
@@ -338,12 +385,15 @@ abbr {
 }
 
 .login-form input[type=checkbox] {
+  background: teal;
   height: initial;
   width: initial;
 }
 
+
+
 .login-form button {
-  background: teal;
+  background: var(--main-color);
   border: 0;
   border-radius: 2px;
   color: white;
@@ -352,13 +402,43 @@ abbr {
   font-weight: bold;
 }
 
-.login-form > div {
+.login-form button:hover {
+  background: var(--light-gray);
+}
+
+
+.login-form-footer {
   display: flex;
   justify-content: space-between;
 }
 
+.login-form-link {
+  background: none;
+  border: 0;
+  border-radius: 2px;
+  color: var(--main-color);
+  cursor: pointer;
+  font-size: 16px;
+  height: 16px;
+  padding: 0;
+  margin: 0;
+  width: 90px;
+}
+
+.login-form-link:nth-of-type(2) {
+  width: 129px;
+}
+
+.login-form-link:hover {
+  text-decoration: underline;
+}
+
+.login-form > span {
+  color: var(--dark-gray);
+}
+
 .login-form > div a {
-  color: teal;
+  color: var(--main-color);
   text-decoration: none;
 }
 
@@ -367,10 +447,8 @@ abbr {
 }
 
 
-@media screen and (max-width: 480px) {
-  body {
-    background-color: lightgreen;
-  }
+@media screen and (max-width: 1382px) {
+  
 }
 
 

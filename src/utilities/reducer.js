@@ -1,7 +1,10 @@
+
 export function reducer(state, action) {
-  switch (action.type) {
-    case 'genre':
-      return { ...state, display: action.payload }
+  switch(action.type) {
+    case 'login':
+      return { ...state, modal: action.type }
+    case 'register':
+        return { ...state, modal: action.type }
     default:
       return state
   }
