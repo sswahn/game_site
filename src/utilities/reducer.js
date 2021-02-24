@@ -4,7 +4,7 @@ export function reducer(state, action) {
     case 'login':
       return { ...state, modal: action.type }
     case 'register':
-        return { ...state, modal: action.type }
+      return { ...state, modal: action.type }
     default:
       return state
   }

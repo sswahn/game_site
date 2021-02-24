@@ -144,6 +144,14 @@ abbr {
   width: 150px;
 }
 
+.dropdown-header div span:last-child {
+  margin-left: 100px;
+}
+
+.dropdown-col:nth-of-type(4) {
+  margin-left: 50px;
+}
+
 .dropdown-col button {
   background: none;
   border: none;
@@ -284,6 +292,19 @@ abbr {
 /* end header content container */
 /* end header */
 
+.checkbox {
+  cursor: pointer;
+  margin: 15px 0;
+}
+.checkbox span:first-child {
+  background: gray;
+  border: 1px solid var(--dark-gray);
+
+  display: inline-block;
+  height: 12px;
+  margin-right: 5px;
+  width: 12px;
+}
 
 
 

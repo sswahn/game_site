@@ -6,8 +6,6 @@ import Router from './Router'
 /**
  * TODO: 
  * 
- * Fix spacing between caret and search input
- * 
  * Fix Login/Registration form
  * 
  * Create forgot password form
@@ -15,8 +13,8 @@ import Router from './Router'
  * Profile page:
  * design profile page, including bio etc. and feed.
  * 
- * Cart page:
- * create cart page
+ * Cart modal:
+ * create cart modal
  */
 
 export default function App() {

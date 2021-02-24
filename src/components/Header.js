@@ -1,4 +1,4 @@
-import { useState, useContext, useReducer } from 'react'
+import { useContext, useReducer } from 'react'
 import { Context } from '../Provider'
 import { reducer } from '../utilities/reducer'
 import { config } from '../config'
@@ -13,10 +13,7 @@ import { faCaretDown } from '@fortawesome/free-solid-svg-icons'
 
 export default function Header() {
   const context = useContext(Context)
-  const [x, dispatch] = useReducer(reducer, context)
-  const [state, setState] = useState({
-
-  })
+  const [state, dispatch] = useReducer(reducer, context)
 
   const search = event => {
     event.preventDefault()
@@ -62,7 +59,7 @@ export default function Header() {
                 <div>
                   <span>Category</span>
                   <span>Genre</span>
-                  <span>Filters:</span>
+                  <span>Filters <button>(clear)</button></span>
                 </div>
               </div>
               <div className="dropdown-row">
@@ -85,13 +82,23 @@ export default function Header() {
                   <button>Survival</button>
                 </div>
                 <div className="vertical-rule"></div>
-              
                 <div className="dropdown-col">
-                  <Checkbox  />
-                  <button>Windows</button>
-                  <button>Mac OS X</button>
-                  <button>Linux</button>
+                  <Checkbox label="Windows" />
+                  <Checkbox label="Mac OS X" />
+                  <Checkbox label="Linux" />
+                  <Checkbox label="Android" />
+                  <Checkbox label="iOS" />
+                  <Checkbox label="Web" />
                 </div>
+                <div className="dropdown-col">
+                  <Checkbox label="Free" />
+                  <Checkbox label="$5 or less" />
+                  <Checkbox label="$10 or less" />
+                  <Checkbox label="$15 or less" />
+                  <Checkbox label="$20 or less" />
+                  <Checkbox label="$25 or less" />
+                </div>
+
               </div>
             </div>
           </div>
