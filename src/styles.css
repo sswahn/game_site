@@ -102,7 +102,6 @@ abbr {
 .dropdown-content {
   background: var(--light-gray);
   border-bottom: 8px solid var(--main-color);
-  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2); /* consider removing */
   color: white;
   display: none;
   left: 0;
@@ -296,13 +295,13 @@ abbr {
   cursor: pointer;
   margin: 15px 0;
 }
+
 .checkbox span:first-child {
   background: gray;
   border: 1px solid var(--dark-gray);
-
   display: inline-block;
   height: 12px;
-  margin-right: 5px;
+  margin-right: 10px;
   width: 12px;
 }
 
@@ -344,7 +343,7 @@ abbr {
 
 .modal > div {
   background: white;
-  border-radius: 5px;
+  border-radius: 2px;
   left: 50%;
   padding: 20px 40px 60px 40px;
   position: absolute;

@@ -1,14 +1,22 @@
-import { createContext } from 'react'
+import { createContext, useReducer } from 'react'
 
 export const Context = createContext()
 
-const data = {
-  modal: undefined
-}
-
 export default function Provider({ children }) {
+  const data = {
+    modal: undefined
+  }
+  function reducer(state, action) {
+    switch(action.type) {
+      case 'modal':
+        return { ...state, modal: action.payload }
+      default:
+        return state
+    }
+  }
+  const [state, dispatch] = useReducer(reducer, data)
   return (
-    <Context.Provider value={data}>
+    <Context.Provider value={[state, dispatch]}>
       {children}
     </Context.Provider>
   )

@@ -6,9 +6,8 @@ import Router from './Router'
 /**
  * TODO: 
  * 
- * Fix Login/Registration form
+ * Fix Modal
  * 
- * Create forgot password form
  * 
  * Profile page:
  * design profile page, including bio etc. and feed.
