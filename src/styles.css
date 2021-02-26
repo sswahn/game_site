@@ -25,8 +25,8 @@ body {
 abbr {
   text-decoration: none;
 }
-
 /* end globals */
+
 
 /* header */
 .header {
@@ -127,10 +127,6 @@ abbr {
   margin: 0 100px 0 10px;
 }
 
-.dropdown:hover .dropdown-content {
-  display: block;
-}
-
 .dropdown-row {
   display: flex;
   flex-direction: row;
@@ -197,6 +193,12 @@ abbr {
   margin: 15px 0 0 0;
   width: 100%;
   padding: 10px 20px;
+}
+
+
+.header form input:hover,
+.header form input:hover + button {
+  background: #eee;
 }
 
 .header form input:focus {
@@ -307,7 +309,13 @@ abbr {
 
 
 
-
+#clear {
+  background: none;
+  border: 0;
+  color: white;
+  cursor: pointer;
+  display: none;
+}
 
 
 

@@ -1,19 +1,22 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 
-export default function Checkbox({ label }) {
-  const [state, setState] = useState({
-    is_checked: true
-  })
-
+export default function Checkbox({ label, toggleClearButton }) {
+  const [state, setState] = useState({ is_checked: true })
+  
   const checked = event => {
     setState({ is_checked: !state.is_checked })
-    const element = event.currentTarget.firstChild
     if (state.is_checked) {
-      element.style.background = 'white'
+      event.currentTarget.firstChild.style.background = 'white'
     } else {
-      element.style.background = 'gray'
+      event.currentTarget.firstChild.style.background = 'gray'
     }
+    toggleClearButton(state, setState)
   }
+
+  //useEffect(() => {
+    // filter data by label (or checkbox id?)
+    // by editing data in context.data / store
+  //}, [])
 
   return (
     <div className="checkbox" onClick={checked}>

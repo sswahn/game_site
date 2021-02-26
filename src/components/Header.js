@@ -1,6 +1,5 @@
-import { useContext, useReducer } from 'react'
+import { useContext, useState } from 'react'
 import { Context } from '../Provider'
-import { reducer } from '../utilities/reducer'
 import { config } from '../config'
 import Checkbox from './Checkbox'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
@@ -9,35 +8,78 @@ import { faSearch } from '@fortawesome/free-solid-svg-icons'
 import { faUserCircle } from '@fortawesome/free-solid-svg-icons'
 import { faShoppingCart } from '@fortawesome/free-solid-svg-icons'
 import { faCaretDown } from '@fortawesome/free-solid-svg-icons'
-
+import { faTimes } from '@fortawesome/free-solid-svg-icons'
 
 export default function Header() {
-  const context = useContext(Context)
-  const [state, dispatch] = useReducer(reducer, context)
-
+  const [context, dispatch] = useContext(Context)
+  const [state, setState] = useState({ menu_open: false })
+  
   const search = event => {
     event.preventDefault()
     alert('works')
   }
 
   const login = () => {
-    dispatch({type: 'login'})
+    dispatch({ type: 'modal', payload: 'login' })
     const modal = document.getElementById('modal')
     modal.style.display = 'block'
   }
 
-  const onMouseOver = () => {
-    const element = document.getElementById('games')
+  const toggleClearButton = (state, setState) => {
+    const checkboxes = document.getElementsByClassName('checkbox')
+    let is_checked = false
+    for (checkbox of checkboxes) {
+      if (checkbox.firstChild.style.background === 'white') {
+        is_checked = true
+      }
+    }
+    console.log('is checked?', is_checked)
+    const clear_button = document.getElementById('clear')
+    if (is_checked === false) {
+      clear_button.style.display = 'none'
+      return
+    }
+    if (clear_button.style.display === 'none') {
+      clear_button.style.display = 'inline-block'
+    }
+    setState({ is_checked: !state.is_checked })
+  }
+
+  const clearCheckboxes = event => {
+    const elements = document.getElementsByClassName('checkbox')
+    Object.keys(elements).forEach(key => {
+      elements[key].firstChild.style.background = 'gray'
+    })
+    event.target.style.display = 'none'
+  }
+
+  const onClick = event => {
+    const menu = document.getElementById('menu')
+    const button = event.currentTarget
+    if (state.menu_open) {
+      setState({ menu_open: !state.menu_open })
+      menu.style.display = 'none'
+    } else {
+      setState({ menu_open: !state.menu_open })
+      button.style['border-bottom'] = '4px solid teal'
+      button.style['padding-bottom'] = '21px'
+      menu.style.display = 'block'
+    }
+  }
+
+  const onMouseOver = event => {
+    const element = event.currentTarget
     element.style['border-bottom'] = '4px solid teal'
     element.style['padding-bottom'] = '21px'
   }
 
-  const onMouseOut = () => {
-    const element = document.getElementById('games')
-    element.style['border-bottom'] = '0'
-    element.style['padding-bottom'] = '25px'
+  const onMouseOut = event => {
+    if (!state.menu_open) {
+      const element = event.currentTarget
+      element.style['border-bottom'] = '0'
+      element.style['padding-bottom'] = '25px'
+    }
   }
-
 
   return (
     <header className="header">
@@ -50,16 +92,18 @@ export default function Header() {
       <nav>
         <div className="dropdown-container">
           <div className="dropdown">
-            <button id="games" className="dropdown-btn" onMouseOver={onMouseOver} onMouseOut={onMouseOut}>
+            <button id="games" className="dropdown-btn" onMouseOver={onMouseOver} onMouseOut={onMouseOut} onClick={onClick}>
               <span>Games</span>
-              <FontAwesomeIcon icon={faCaretDown} />
+              {state.menu_open 
+                ? <FontAwesomeIcon icon={faTimes} />
+                : <FontAwesomeIcon icon={faCaretDown} />}
             </button>
-            <div className="dropdown-content" onMouseOver={onMouseOver} onMouseOut={onMouseOut}>
+            <div id="menu" className="dropdown-content">
               <div className="dropdown-header">
                 <div>
                   <span>Category</span>
                   <span>Genre</span>
-                  <span>Filters <button>(clear)</button></span>
+                  <span>Filters <button id="clear" onClick={clearCheckboxes}>(clear)</button></span>
                 </div>
               </div>
               <div className="dropdown-row">
@@ -83,22 +127,21 @@ export default function Header() {
                 </div>
                 <div className="vertical-rule"></div>
                 <div className="dropdown-col">
-                  <Checkbox label="Windows" />
-                  <Checkbox label="Mac OS X" />
-                  <Checkbox label="Linux" />
-                  <Checkbox label="Android" />
-                  <Checkbox label="iOS" />
-                  <Checkbox label="Web" />
+                  <Checkbox label="Windows" toggleClearButton={toggleClearButton} />
+                  <Checkbox label="Mac OS X" toggleClearButton={toggleClearButton} />
+                  <Checkbox label="Linux" toggleClearButton={toggleClearButton} />
+                  <Checkbox label="Android" toggleClearButton={toggleClearButton} />
+                  <Checkbox label="iOS" toggleClearButton={toggleClearButton} />
+                  <Checkbox label="Web" toggleClearButton={toggleClearButton} />
                 </div>
                 <div className="dropdown-col">
-                  <Checkbox label="Free" />
-                  <Checkbox label="$5 or less" />
-                  <Checkbox label="$10 or less" />
-                  <Checkbox label="$15 or less" />
-                  <Checkbox label="$20 or less" />
-                  <Checkbox label="$25 or less" />
+                  <Checkbox label="Free" toggleClearButton={toggleClearButton} />
+                  <Checkbox label="$5 or less" toggleClearButton={toggleClearButton} />
+                  <Checkbox label="$10 or less" toggleClearButton={toggleClearButton} />
+                  <Checkbox label="$15 or less" toggleClearButton={toggleClearButton} />
+                  <Checkbox label="$20 or less" toggleClearButton={toggleClearButton} />
+                  <Checkbox label="$25 or less" toggleClearButton={toggleClearButton} />
                 </div>
-
               </div>
             </div>
           </div>

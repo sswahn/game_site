@@ -6,7 +6,7 @@ import { faLock } from '@fortawesome/free-solid-svg-icons'
 import { faUserPlus } from '@fortawesome/free-solid-svg-icons'
 
 export default function Login() {
-  const [state, dispatch] = useContext(Context)
+  const [context, dispatch] = useContext(Context)
 
   return (
     <div>
