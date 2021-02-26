@@ -4,11 +4,14 @@ export const Context = createContext()
 
 export default function Provider({ children }) {
   const data = {
-    modal: undefined
+    modal: undefined,
+    checkbox: false
   }
   function reducer(state, action) {
     switch(action.type) {
       case 'modal':
+        return { ...state, modal: action.payload }
+      case 'checkbox':
         return { ...state, modal: action.payload }
       default:
         return state

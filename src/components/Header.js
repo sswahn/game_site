@@ -33,16 +33,14 @@ export default function Header() {
         is_checked = true
       }
     }
-    console.log('is checked?', is_checked)
     const clear_button = document.getElementById('clear')
-    if (is_checked === false) {
-      clear_button.style.display = 'none'
-      return
-    }
-    if (clear_button.style.display === 'none') {
+    if (is_checked === true) {
+      dispatch({ type: 'checkbox', payload: true })
       clear_button.style.display = 'inline-block'
+    } else {
+      dispatch({ type: 'checkbox', payload: false })
+      clear_button.style.display = 'none'
     }
-    setState({ is_checked: !state.is_checked })
   }
 
   const clearCheckboxes = event => {
