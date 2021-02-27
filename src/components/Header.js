@@ -25,10 +25,10 @@ export default function Header() {
     modal.style.display = 'block'
   }
 
-  const toggleClearButton = (state, setState) => {
+  const toggleClearButton = () => {
     const checkboxes = document.getElementsByClassName('checkbox')
     let is_checked = false
-    for (checkbox of checkboxes) {
+    for (const checkbox of checkboxes) {
       if (checkbox.firstChild.style.background === 'white') {
         is_checked = true
       }

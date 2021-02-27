@@ -8,7 +8,6 @@ import Router from './Router'
  * 
  * Fix Modal
  * 
- * use context to fix clear button
  * 
  * Profile page:
  * design profile page, including bio etc. and feed.

@@ -7,7 +7,7 @@ export default function Checkbox({ label, toggleClearButton }) {
   
   const checked = event => {
     setState({ is_checked: !state.is_checked })
-    if (context.checkbox === false) {
+    if (context.checkbox === true) {
       setState({ is_checked: true })
     }
     if (state.is_checked) {
