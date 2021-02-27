@@ -9,7 +9,6 @@ import { faTimes } from '@fortawesome/free-solid-svg-icons'
 export default function Modal() {
   const [context, dispatch] = useContext(Context)
   const ref = useRef(context)
-  let Content = undefined
 
   const close = () => {
     const modal = document.getElementById('modal')
@@ -42,7 +41,7 @@ export default function Modal() {
             <FontAwesomeIcon icon={faTimes} />
           </button>
         </div>
-        {Content}
+        {renderContent()}
       </div>
     </div>
   )
