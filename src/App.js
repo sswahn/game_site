@@ -6,14 +6,11 @@ import Router from './Router'
 /**
  * TODO: 
  * 
- * Fix Modal
- * 
+ * checkbox is buggy
  * 
  * Profile page:
  * design profile page, including bio etc. and feed.
  * 
- * Cart modal:
- * create cart modal
  */
 
 export default function App() {
