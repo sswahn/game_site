@@ -24,6 +24,12 @@ export default function Header() {
     const modal = document.getElementById('modal')
     modal.style.display = 'block'
   }
+  
+  const cart = () => {
+    dispatch({ type: 'modal', payload: 'cart'})
+    const modal = document.getElementById('modal')
+    modal.style.display = 'block'
+  }
 
   const toggleClearButton = () => {
     const checkboxes = document.getElementsByClassName('checkbox')
@@ -155,7 +161,7 @@ export default function Header() {
             <FontAwesomeIcon icon={faUserCircle} />
             <span className="tooltiptext">User Login</span>
           </button>
-          <button className="tooltip">
+          <button className="tooltip" onClick={cart}>
             <FontAwesomeIcon icon={faShoppingCart} />
             <span className="tooltiptext">Cart</span>
           </button>

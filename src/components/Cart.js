@@ -3,8 +3,9 @@
 export default function Cart() {
 
   return (
-    <div className="container">
-      <div>Cart</div>
+    <div className="">
+      <h2>Your Cart is empty</h2>
+      <button>Sign in to your account</button>
     </div>
   )
 }

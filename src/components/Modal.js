@@ -3,12 +3,13 @@ import { Context } from '../Provider'
 import Login from './Login'
 import Register from './Register'
 import ForgotPassword from './ForgotPassword'
+import Cart from './Cart'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faTimes } from '@fortawesome/free-solid-svg-icons'
 
 export default function Modal() {
   const [context, dispatch] = useContext(Context)
-  const ref = useRef(context)
+  
 
   const close = () => {
     const modal = document.getElementById('modal')
@@ -23,18 +24,20 @@ export default function Modal() {
         return <Register />
       case 'forgot-password':
         return <ForgotPassword />
+      case 'cart':
+        return <Cart />
       default:
         return
     }
   }
 
-  useEffect(() => {
-    console.log('modal:', context.modal)
-  }, [context.modal])
+  // useEffect(() => {
+    
+  // }, [context.modal])
   
 
   return (
-    <div ref={ref} id="modal" className="modal">
+    <div id="modal" className="modal">
       <div>
         <div>
           <button className="close-btn" onClick={close}>
