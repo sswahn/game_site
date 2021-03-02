@@ -1,15 +1,27 @@
 import Provider from './Provider'
 import Modal from './components/Modal'
 import Header from './components/Header'
+import Main from './components/Main'
+import Footer from './components/Footer'
 import Router from './Router'
 
 /**
  * TODO: 
  * 
- * checkbox is buggy
- * 
  * Profile page:
- * design profile page, including bio etc. and feed.
+ * css profile page
+ * 
+ * Uploads page:
+ * create uploads page.
+ * 
+ * Display page:
+ * make page to display uploaded game
+ * go to itchio and do the log in upload flow
+ * 
+ * Cart Modal:
+ * cart modal design
+ * 
+ * Checkout page 
  * 
  */
 
@@ -18,6 +30,8 @@ export default function App() {
     <Provider>
       <Modal />
       <Header />
+      <Main />
+      <Footer />
       <Router />
     </Provider>
   )

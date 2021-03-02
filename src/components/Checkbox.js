@@ -1,19 +1,13 @@
-import { useState, useContext, useEffect } from 'react'
-import { Context } from '../Provider'
+
 
 export default function Checkbox({ label, toggleClearButton }) {
-  const [context, dispatch] = useContext(Context)
-  const [state, setState] = useState({ is_checked: true })
   
   const checked = event => {
-    setState({ is_checked: !state.is_checked })
-    if (context.checkbox === true) {
-      setState({ is_checked: true })
-    }
-    if (state.is_checked) {
-      event.currentTarget.firstChild.style.background = 'white'
+    const element = event.currentTarget.firstChild
+    if (element.style.background === 'gray' || element.style.background === '') {
+      element.style.background = 'white'
     } else {
-      event.currentTarget.firstChild.style.background = 'gray'
+      element.style.background = 'gray'
     }
     toggleClearButton()
   }
