@@ -9,7 +9,6 @@ import { faTimes } from '@fortawesome/free-solid-svg-icons'
 
 export default function Modal() {
   const [context, dispatch] = useContext(Context)
-  
 
   const close = () => {
     const modal = document.getElementById('modal')
