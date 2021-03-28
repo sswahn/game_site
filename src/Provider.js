@@ -4,6 +4,9 @@ export const Context = createContext()
 
 export default function Provider({ children }) {
   const data = {
+    formatUrl(title) {
+      return `/games/${title.toLowerCase().replaceAll(' ', '-')}`
+    },
     authenticated: false,
     modal: undefined,
     checkbox: false

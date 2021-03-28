@@ -8,6 +8,8 @@ import Router from './Router'
 /**
  * TODO: 
  * 
+ * style toolTip for each product item
+ * 
  * Profile page:
  * css profile page
  * 

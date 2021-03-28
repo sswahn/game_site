@@ -3,6 +3,7 @@ import { Context } from '../../Provider'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faUserCircle } from '@fortawesome/free-solid-svg-icons'
 import { faShoppingCart } from '@fortawesome/free-solid-svg-icons'
+import { config } from '@fortawesome/fontawesome-svg-core'
 
 export default function ModalMenu() {
   const [context, dispatch] = useContext(Context)
@@ -23,7 +24,7 @@ export default function ModalMenu() {
     <div className="login">
       <button className="tooltip" onClick={login}>
         {context.authenticated 
-          ? <div>authed</div>
+          ? <a href={config.url.profile}>authed</a>
           : <FontAwesomeIcon icon={faUserCircle} />
         }
         <span className="tooltiptext">User Login</span>
