@@ -768,35 +768,39 @@ abbr {
 
 .product-tooltip {
   width: 120px;
-  background-color: var(--main-color);
+  background-color: var(--light-gray);
   color: #fff;
   font-size: 12px;
-  text-align: center;
-  border-radius: 6px;
-  padding: 5px 0;
+  padding: 10px 20px 20px;
   position: absolute;
   z-index: 1;
   top: 0;
-  left: 102%;
-  
-  height: 300px;
-  width: 200px;
+  left: 103%;
+  width: 300px;
 }
-
-.product-tooltip img {
-  width: 100%;
-}
-
 
 .product-tooltip::after {
   content: "";
   position: absolute;
-  top: 50%;
+  top: 10%;
   right: 100%;
   margin-top: -5px;
-  border-width: 5px;
+  border-width: 10px;
   border-style: solid;
-  border-color: transparent var(--main-color) transparent transparent;
+  border-color: transparent var(--light-gray) transparent transparent;
+}
+
+.product-tooltip img {
+  margin: 10px 0;
+  width: 100%;
+}
+
+.product-tooltip strong {
+  font-size: 16px;
+}
+
+.product-tooltip p {
+  font-size: 14px;
 }
 
 
