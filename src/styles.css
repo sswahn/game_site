@@ -735,22 +735,18 @@ abbr {
 
 .products {
   display: grid;
-  grid-column-gap: 50px;
+  grid-column-gap: 10px;
   grid-row-gap: 50px;
-  grid-template-columns: auto auto auto;
-  /*
-  justify-content: space-between;
-  flex-direction: row;
-  flex-wrap: wrap;
-  */
+  grid-template-columns: auto auto auto auto;
+
   margin: 0 auto;
-  width: 1000px;
+  max-width: 1434px;
 }
 
 .products .item {
   display: inline-block;
   position: relative;
-  width: 300px;
+  width: 350px;
 }
 
 .products .item:nth-child(-n+4) {
@@ -771,8 +767,6 @@ abbr {
 
 
 .product-tooltip {
-  border: 1px dashed red;
-
   width: 120px;
   background-color: var(--main-color);
   color: #fff;
@@ -782,11 +776,9 @@ abbr {
   padding: 5px 0;
   position: absolute;
   z-index: 1;
-  top: 90%;
-  left: 50%;
-  margin-left: -60px;
-
-
+  top: 0;
+  left: 102%;
+  
   height: 300px;
   width: 200px;
 }
@@ -795,19 +787,17 @@ abbr {
   width: 100%;
 }
 
-.tooltip .tooltiptext::after {
+
+.product-tooltip::after {
   content: "";
   position: absolute;
-  bottom: 100%;
-  left: 50%;
-  margin-left: -5px;
+  top: 50%;
+  right: 100%;
+  margin-top: -5px;
   border-width: 5px;
   border-style: solid;
-  border-color: transparent transparent var(--main-color) transparent;
+  border-color: transparent var(--main-color) transparent transparent;
 }
-
-
-
 
 
 

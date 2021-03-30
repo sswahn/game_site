@@ -48,7 +48,7 @@ export default function Profile() {
           </div>
         </div>
         <div>
-          {data.user.uploads.title !== undefined && <button>Uploads</button>}
+          {data.user.products.title !== undefined && <button>Uploads</button>}
           <button>Games</button>
           <button>Wishlist</button>
           <button>Reviews</button>
