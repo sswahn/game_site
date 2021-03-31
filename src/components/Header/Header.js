@@ -1,10 +1,11 @@
-import GamesButton from './Header/GamesButton'
-import DropdownMenu from './Header/DropdownMenu'
-import SearchBar from './Header/SearchBar'
-import ModalMenu from './Header/ModalMenu'
-import { config } from '../config'
+import GamesButton from './GamesButton'
+import DropdownMenu from './DropdownMenu'
+import SearchBar from './SearchBar'
+import ModalMenu from './ModalMenu'
+import { config } from '../../config'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faBars } from '@fortawesome/free-solid-svg-icons'
+import './header.css'
 
 export default function Header() {
   return (
